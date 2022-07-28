@@ -34,12 +34,12 @@ export default function SignupForm() {
     } catch (err) {
       console.log(err);
       setLoading(false);
-      setError("Failed to create an account!");
+      setError("Failed to create an account! ");
     }
   }
 
   return (
-    <Form style={{ height: "500px" }} onSubmit={handleSubmit}>
+    <Form style={{ height: "500px" ,'width':'100% }} onSubmit={handleSubmit}>
       <TextInput
         type="text"
         placeholder="Enter name"
@@ -62,7 +62,7 @@ export default function SignupForm() {
         type="password"
         required
         placeholder="Enter password"
-        icon="lock"
+        icon="lock  unloack"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
@@ -73,7 +73,7 @@ export default function SignupForm() {
         placeholder="Confirm password"
         icon="lock_clock"
         value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
+        onChange={(e) => {setConfirmPassword(e.target.value)}}
       />
 
       <Checkbox
